@@ -1,0 +1,28 @@
+<p>
+  post works!
+</p>
+<form (submit)="addMovie()">
+  <div>
+  <label >Movie Id</label>
+  <input type="text" required [(ngModel)]="newMovie.movieId" name="movieId">
+  </div><br>
+  <div>
+  <label>Movie Title</label>
+  <input type="text" [(ngModel)]="newMovie.movieTitle" name="movieTitle">
+  </div><br>
+  <div>
+  <label >Movie imdbId</label>
+  <input type="text" [(ngModel)]="newMovie.imdbId" name="imdbId">
+  </div><br>
+  <div>
+  <label >Movie year</label>
+  <input type="text" [(ngModel)]="newMovie.year" name="year">
+   </div><br>
+   <div>
+   <label >Movie poster</label>
+  <input type="text" [(ngModel)]="newMovie.poster" name="poster">
+  </div>
+  <input type="submit" value ="submit">
+</form  >
+
+

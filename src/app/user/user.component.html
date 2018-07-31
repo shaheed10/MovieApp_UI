@@ -1,0 +1,35 @@
+<h1>List of Movies</h1>
+  <mat-grid-list cols="12" rowHeight="100px">
+      <div *ngFor="let get of getter">
+        <mat-grid-tile colspan="4" rowspan="6">
+            <mat-card >
+                <!-- <mat-list-item>Movie Id:{{get.movieId}}</mat-list-item><br>
+                <mat-list-item>Movie Title:{{get.title}}</mat-list-item><br>
+                <mat-list-item>Movie Imdb:{{get.imdbId}}</mat-list-item><br>
+                <mat-list-item>Movie Year:{{get.year}}</mat-list-item><br> -->
+                <img src={{get.poster}}/>
+              </mat-card> 
+        </mat-grid-tile>
+      </div>
+</mat-grid-list>
+
+
+<!-- delete and details -->
+<div *ngFor="let get of getter">
+  <mat-list>
+    <mat-list-item>Movie-Id:{{get.movieId}}</mat-list-item>
+    <!-- <button mat-flat-button value="display details" (click)="getById(get.movieId)"></button> -->
+    <input type="button" value="dispaly details" (click)="getById(get.movieId)"/>
+    <input type="button" value="delete" (click)="deleteById(get.movieId)"/>
+
+  </mat-list>
+</div>
+<div *ngIf="flag">
+  <p>Movie Id : {{getById.movieId}}</p>
+  <p>Movie Title:{{getById.title}}</p>
+  <p>Movie Imdb:{{getById.imdbId}}</p>
+  <p>Movie Year:{{getById.year}}</p>
+  <img src={{get.poster}}/>
+</div>
+
+

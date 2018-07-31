@@ -1,0 +1,25 @@
+<p>
+  Enter a Movie
+</p>
+<form (submit)="getMovieByTitle()">
+<input type="text" [(ngModel)]="getTitle.title" name="movieTitle">
+<input type="submit" value ="search">
+</form> 
+
+
+
+<div *ngIf="flag">
+  <!-- <p>Movie Id : {{getMovieByTitle.movieId}}</p> -->
+  <div *ngFor="let m of getTitle">
+  <mat-list>
+
+  <mat-list-item>Movie Title:{{m.Title}}</mat-list-item>
+  <mat-list-item>Movie Imdb:{{m.imdbID}}</mat-list-item>
+  <mat-list-item>Movie Year:{{m.Year}}</mat-list-item>
+  <img src={{m.Poster}}/>
+
+</mat-list>
+<button mat-raised-button type="submit" value="save" (click)="saveMovie(m)">Save</button>
+</div>
+</div>
+
